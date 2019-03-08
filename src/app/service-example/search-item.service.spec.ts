@@ -33,22 +33,11 @@ describe('SearchItemService', () => {
 
   it('search should return SearchItems', fakeAsync(() => {
     const response = ITEMS;
-    //  {
-    //   resultCount: 1,
-    //   results: [
-    //     {
-    //       artistId: '78500',
-    //       artistName: 'U2',
-    //       trackName: 'Beautiful Day',
-    //       artworkUrl60: 'image.jpg'
-    //     }
-    //   ]
-    // };
 
     // Perform a request (this is fakeAsync to the responce won't be called until tick() is called)
     service.searchMethod('U2').subscribe(res => {
       // Run our tests
-      expect(res.results.length).toBe(3);
+      expect(res.results.length).toBe(1);
       expect(res.results[0]['artistName']).toBe('U2');
       expect(res.results[0]['trackName']).toBe('Beautiful Day');
       expect(res.results[0]['artworkUrl60']).toBe('image.jpg');

@@ -33,6 +33,6 @@ describe('ServiceExampleComponent', () => {
   it('should set heros correctly from the server', () => {
     spyOn(service, 'searchMethod').and.returnValue(of(articles));
     fixture.detectChanges();
-    expect(fixture.componentInstance.articles.results.length).toBe(3);
+    expect(fixture.componentInstance.articles.results.length).toBe(1);
   });
 });
