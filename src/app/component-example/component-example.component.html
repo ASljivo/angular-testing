@@ -1,0 +1,26 @@
+<h2>Posts example</h2>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Body</th>
+    <th></th>
+  </tr>
+  <tr
+    id="post{{ index }}"
+    class="posts"
+    *ngFor="let post of posts; index as index"
+  >
+    <td>{{ post.id }}</td>
+    <td>{{ post.title }}</td>
+    <td>{{ post.body }}</td>
+    <td
+      id="deletePost{{ index }}"
+      class="delete-icon delete{{ index }}"
+      (click)="delete(post)"
+    >
+      X
+    </td>
+  </tr>
+</table>
