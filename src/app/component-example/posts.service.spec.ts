@@ -53,21 +53,21 @@ describe('Posts', () => {
     tick();
   }));
 
-  it('should call get post by id with correct URL', () => {
+  it('should call get post by id with correct URL', fakeAsync(() => {
     service.getPost(3).subscribe();
 
     const req = httpTestingController.expectOne(`${reqUrl}/3`);
     req.flush(response[2]);
-    httpTestingController.verify();
-  });
+    tick();
+  }));
 
-  it('should call deletePost with correct URL', () => {
+  it('should call deletePost with correct URL', fakeAsync(() => {
     service.deletePost(123).subscribe(res => {
       expect(Object.keys(res).length).toBe(0);
     });
 
     const req = httpTestingController.expectOne(`${reqUrl}/123`);
     req.flush({});
-    httpTestingController.verify();
-  });
+    tick();
+  }));
 });

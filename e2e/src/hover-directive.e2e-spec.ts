@@ -15,8 +15,6 @@ describe('Hover directive test:', () => {
   });
 
   it('should check hover effect on input', () => {
-    browser.waitForAngular();
-
     browser
       .actions()
       .mouseMove(element(by.id('blueFocusedField')))

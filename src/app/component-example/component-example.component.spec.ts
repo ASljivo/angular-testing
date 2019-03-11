@@ -47,6 +47,7 @@ describe('ComponentExampleComponent', () => {
   });
 
   it('should set heros correctly from the server', () => {
+    // We create a spy on our service so that if the getPosts function is called it returns posts.
     spyOn(service, 'getPosts').and.returnValue(of(posts));
     fixture.detectChanges();
     expect(fixture.componentInstance.posts.length).toBe(3);
@@ -60,8 +61,9 @@ describe('ComponentExampleComponent', () => {
   });
 
   it('should detect delete post', () => {
-    spyOn(service, 'deletePost').and.returnValue(of(true));
+    spyOn(service, 'deletePost').and.returnValue(of({}));
     component.posts = posts;
+    expect(fixture.componentInstance.posts.length).toBe(3);
     component.delete(posts[0]);
     expect(service.deletePost).toHaveBeenCalledWith(posts[0].id);
     expect(fixture.componentInstance.posts.length).toBe(2);
