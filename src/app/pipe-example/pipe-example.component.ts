@@ -8,11 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class PipeExampleComponent implements OnInit {
   heroes = [
     { id: 1, name: 'Spiderman', strength: 8 },
-    { id: 2, name: 'Wonderful Woman', strength: 24 },
-    { id: 3, name: 'Superman', strength: 55 }];
-  constructor() { }
+    { id: 2, name: 'Wonderful Woman', strength: 14 },
+    { id: 3, name: 'Superman', strength: 55 }
+  ];
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

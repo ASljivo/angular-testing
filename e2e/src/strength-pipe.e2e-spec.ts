@@ -18,8 +18,8 @@ describe('Strength pipe test:', () => {
   it('should check pipe output', () => {
     expect(test.getElementValueById('strength8')).toEqual('Power: 8 (weak)');
     browser.sleep(1000);
-    expect(test.getElementValueById('strength24')).toEqual(
-      'Power: 24 (unbelievable)'
+    expect(test.getElementValueById('strength14')).toEqual(
+      'Power: 14 (strong)'
     );
     browser.sleep(1000);
     expect(test.getElementValueById('strength55')).toEqual(
